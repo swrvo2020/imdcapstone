@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>755761204195-mo1pfg5vrd48eo33kotc1k81vf0t2sk7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.755761204195-mo1pfg5vrd48eo33kotc1k81vf0t2sk7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAYNASIRTJMxFHXsH1t-CZcFx5v2S2pBoI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>755761204195</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ignacio.Swervo-1-0</string>
+	<key>PROJECT_ID</key>
+	<string>swervo1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>swervo1.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:755761204195:ios:abe28a24ecb1078f6deed6</string>
+	<key>DATABASE_URL</key>
+	<string>https://swervo1.firebaseio.com</string>
+</dict>
+</plist>
