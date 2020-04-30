@@ -8,7 +8,7 @@ div {
 
 body {
   margin: 0;
-  padding-top: 5%;
+  padding-top: 1.5%;
   background-image: url('/assets/tesla.jpg');
   background-size: cover;
   z-index: -1;
@@ -19,6 +19,41 @@ h1 {
   font-weight: 700;
   font-style: normal;
   color: white;
+}
+
+/* Navigation */
+.header-content {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar {
+  width: 90%;
+  border: green 2px dashed;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.menu-items * {
+  border: red 1px dashed;
+  /* background-color: white; */
+}
+
+.menu-item {
+  margin-left: 5%;
+  font-family: eurostile, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  color: white;
+}
+
+.menu-item:hover {
+  color: blue;
 }
 
 .item {
