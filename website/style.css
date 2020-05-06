@@ -37,6 +37,10 @@ button {
   margin: 12px 0px;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Scene Information */
 .scene-number {
   margin: 0;
@@ -54,6 +58,30 @@ button {
   font-size: 1.2rem;
   color: #fff;
   margin: 12px 0px;
+}
+
+/* VR toggle */
+.vr-toggle {
+  /* align-self: content; */
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 80%;
+  border: purple 3px dashed;
+  z-index: 2;
+}
+
+.vr-toggle-item {
+  /* align-content: center; */
+  max-height: 720px;
+  min-height: 640px;
+  width: 90%;
+  margin: 5% 2%;
+  border: 3px blue dashed;
+}
+
+.vr-toggle-item:hover {
+  background-color: rgba(255, 0, 140, 0.5);
 }
 
 /* Navigation */
