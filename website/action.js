@@ -9,6 +9,10 @@ const selectSceneNumber = document.querySelector('.scene-number');
 const selectSceneTitle = document.querySelector('.scene-title');
 const selectSceneDesc = document.querySelector('.scene-description');
 
+// VR toggle
+const withVRSelect = document.querySelector('#with-vr');
+const withoutVRSelect = document.querySelector('#without-vr');
+
 // Number of scenes
 const sceneLength = 6;
 
@@ -38,7 +42,7 @@ var scenes = new Array();
 
 // Push all the scenes
 for (var i = 0; i < sceneLength; i++) {
-  var pushScene = new SceneData(i, "This is scene " + (i + 1), "This is what happens in scene " + (i + 1), "url('/scenes/scene-" + i + ".jpg')")
+  var pushScene = new SceneData(i, "This is scene " + (i + 1), "This is what happens in scene " + (i + 1), "url('scenes/scene-" + i + ".jpg')")
   scenes.push(pushScene);
 };
 
@@ -76,19 +80,22 @@ function changeScene() {
   console.log("Now: " + imageSwitch);
 };
 
-  function placeScene(toggle) {
-    const selectPlaceScene = document.querySelector('#place-scene');
+// unhide the scene toggle
+function placeScene(toggle) {
+  const selectPlaceScene = document.querySelector('#place-scene');
 
-    if (toggle == true) {
-      selectPlaceScene.classList.remove("hidden");
-    } else {
-      selectPlaceScene.classList.add("hidden");
-    }
-
+  if (toggle == true) {
+    selectPlaceScene.classList.remove("hidden");
+  } else {
+    selectPlaceScene.classList.add("hidden");
   }
+}
 
+function sceneToggle(sceneList) {
 
+}
 
 
 // call the changeScene function
 selectImgChange.onclick = changeScene;
+withVRSelect.onclick;
