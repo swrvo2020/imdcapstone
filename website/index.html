@@ -25,8 +25,8 @@
 
       <div id="place-scene" class="hidden">
         <div class="vr-toggle">
-          <div id="with-vr" class="vr-toggle-item">button 1</div>
-          <div id="without-vr" class="vr-toggle-item">button 2</div>
+          <div id="with-vr" class="vr-toggle-item">I have a VR Headset</div>
+          <div id="without-vr" class="vr-toggle-item">I don't have a VR Headset</div>
         </div>
       </div>
 
@@ -35,7 +35,10 @@
           <h1 class="scene-number">Press button to start</h1>
           <h2 class="scene-title">This is the scene title</h2>
           <p class="scene-description">View the route to the station. While you are on your commute, you can check the information on the pilot information</p>
-          <button class="change-button">Next scene</button>
+          <div class="scene-change">
+            <button id="back-button" class="scene-change-button">Back</button>
+            <button id="next-button" class="scene-change-button">Next Scene</button>
+          </div>
         </div>
       </div>
 

@@ -1,5 +1,7 @@
 // Select image change button
-const selectImgChange = document.querySelector('.change-button');
+var sceneChangeButton = document.querySelector('.scene-change');
+const nextImg = document.querySelector('#next-button');
+const prevImg = document.querySelector('#back-button');
 
 // Query select background img tag
 const selectBG = document.querySelector('#background-img');
@@ -10,6 +12,7 @@ const selectSceneTitle = document.querySelector('.scene-title');
 const selectSceneDesc = document.querySelector('.scene-description');
 
 // VR toggle
+const vrToggle = document.querySelector('.vr-toggle');
 const withVRSelect = document.querySelector('#with-vr');
 const withoutVRSelect = document.querySelector('#without-vr');
 
@@ -59,25 +62,42 @@ function loadNewScene(imageSwitch) {
 
 // when changeScene() button is clicked
 function changeScene() {
-  console.log("currently: " + imageSwitch);
-  loadNewScene(imageSwitch);
 
-  // if imageSwitch is less than the sceneLength - 1
-  if (imageSwitch < (sceneLength - 1)) {
-    //  ++
-    imageSwitch++;
+  // if you click next
+  nextImg.onclick = function() {
+    imageSwitch++; // move image switch +1
 
-    if (imageSwitch == 4) {
-      placeScene(true);
+    // if it hits scene 3
+    if(imageSwitch == 3) {
+      placeScene(true); // place the vr toggle
     } else {
-      placeScene(false);
+      placeScene(false); // hide the vr toggle, once you move past
     }
 
-  } else {
-    // restart from zero
-    imageSwitch = 0;
+    // if the imageSwitch goes beyond the number of screens
+    if(imageSwitch > (sceneLength - 1)) {
+      imageSwitch = 0; // restart at 0
+    }
   };
-  console.log("Now: " + imageSwitch);
+
+  // if you click prev
+  prevImg.onclick = function() {
+    imageSwitch--; // move image switch -1
+
+    // if it hits scene 3
+    if(imageSwitch == 3) {
+      placeScene(true); // place the vr toggle
+    } else {
+      placeScene(false); // hide the vr toggle, once you move past
+    }
+
+    // if the imageSwitch goes before the number of screens
+    if(imageSwitch < 0) {
+      imageSwitch = (sceneLength - 1); // restart from top; obsolete once all screens are in
+    }
+  };
+
+  loadNewScene(imageSwitch); // load new screen
 };
 
 // unhide the scene toggle
@@ -91,11 +111,32 @@ function placeScene(toggle) {
   }
 }
 
-function sceneToggle(sceneList) {
+// if sceneToggle elements are clicked
+function sceneToggle() {
 
+  withVRSelect.onclick = function() {
+    console.log("vr selected")
+    vrToggleSelect = true;
+    imageSwitch = 4;
+    loadNewScene(imageSwitch);
+    placeScene(false);
+  };
+
+  withoutVRSelect.onclick = function() {
+    console.log("without vr selected")
+    vrToggleSelect = false;
+    imageSwitch = 5;
+    loadNewScene(imageSwitch);
+    placeScene(false);
+  };
 }
+
+// check which element is clicked
+var vrToggleSelect = false;
+
+
 
 
 // call the changeScene function
-selectImgChange.onclick = changeScene;
-withVRSelect.onclick;
+sceneChangeButton.onclick = changeScene;
+vrToggle.onclick = sceneToggle;
