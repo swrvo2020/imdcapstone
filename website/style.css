@@ -8,8 +8,8 @@ div {
 
 body {
   margin: 0;
-  padding-top: 1.5%;
-  background-image: url('/assets/tesla.jpg');
+  /* padding-top: 1.5%; */
+  background-image: url('/scenes/start.jpg');
   background-size: cover;
   z-index: -1;
 }
@@ -18,13 +18,62 @@ h1 {
   font-family: eurostile, sans-serif;
   font-weight: 700;
   font-style: normal;
+  font-size: 3rem;
   color: white;
+}
+
+h2 {
+  font-family: eurostile, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.5rem;
+  color: white;
+}
+
+button {
+  font-size: 1rem;
+  padding: 12px 16px;
+  border-radius: 3px;
+  margin: 12px 0px;
+}
+
+/* Scene Information */
+.scene-number {
+  margin: 0;
+}
+
+.scene-title {
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+}
+
+.scene-description {
+  font-family: proxima-nova, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 12px 0px;
 }
 
 /* Navigation */
 .header-content {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  border: white 2px dotted;
+}
+
+.navlink {
+  color: pink;
+  font-size: 24px;
+}
+
+.logo {
+  /* width: 15%; */
+  padding-top: 3%;
+  padding-left: 3%;
+  width: 48px;
+  position: absolute;
 }
 
 .nav-bar {
@@ -64,15 +113,8 @@ h1 {
   z-index: 1;
 }
 
-.scene-description {
-  font-family: proxima-nova, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #fff;
-}
-
 .body-container {
-  border: 1px blue dashed;
+  /* border: 1px blue dashed; */
 }
 
 .black-gradient {
