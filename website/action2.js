@@ -92,7 +92,7 @@ function ChooseScene(index) {
 
     case 3:
       newSrc =  'url(\'scenes/scene-1C-A.jpg\')';
-      newPhone = 'scenes/screens/choosing-ride.png';
+      newPhone = 'scenes/screens/choose-ride.png';
       newTitle = 'Opens UAM App';
       newDesc = 'You see that there are multiple options for riding hailing services. Choose an option that can get you to the meeting on time.';
       scenes.setScene(newSrc, newPhone, newTitle, newDesc);
@@ -132,7 +132,7 @@ function ChooseScene(index) {
 
     case 8:
       newSrc =  'url(\'scenes/scene-2B-A.jpg\')';
-      newPhone = 'scenes/screens/pilot-information.png';
+      newPhone = 'scenes/screens/pilot-info.png';
       newTitle = 'Checks Pilot Information';
       newDesc = 'You can also check on your pilot for the ride to ensure that the best experience is secured.';
       scenes.setScene(newSrc, newPhone, newTitle, newDesc);
@@ -172,7 +172,7 @@ function ChooseScene(index) {
 
     case 13:
       newSrc =  'url(\'scenes/Uber-Elevate.jpg\')';
-      newPhone = '';
+      newPhone = 'scenes/screens/select-type.png';
       newTitle = 'Choose Your Ride';
       newDesc = 'Congratulations! You\'ve arrived at your destination station. Now, the ride hailing service will be waiting for you at the entrance to help you get through the last mile.';
       scenes.setScene(newSrc, newPhone, newTitle, newDesc);
@@ -248,12 +248,15 @@ $('#next-button').on('click', function() {
 
   if(indexCount == 0) {
     $('.screen-container').addClass('fade-from-left');
-    $('.screen-container').removeClass('hidden');
     $('.scene-number').addClass('hidden');
   };
 
   if(indexCount == 1) {
     $('#back-button').removeClass('hidden');
+  }
+
+  if(indexCount > 1) {
+    $('.screen-container').removeClass('hidden');
   }
 
   if(indexCount < sceneLength) {
@@ -342,7 +345,25 @@ function sceneToggle() {
 var vrToggleSelect = false;
 
 
+function HighlightButton() {
 
+  console.log('it\'s starting...');
+
+  $('*').click(function(event) {
+    var target = $(event.target);
+
+    console.log('user clicked');
+
+    if(!target.is('.button-press')) {
+      $('button-press').addClass('highlight-select');
+      console.log('highlight button');
+    } else {
+      console.log('button clicked');
+    }
+  })
+}
+
+HighlightButton();
 
 // call the changeScene function
 vrToggle.onclick = sceneToggle;

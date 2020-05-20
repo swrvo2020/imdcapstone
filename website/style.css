@@ -108,6 +108,32 @@ button:focus {
     }
 }
 
+/* Button information */
+/* .button-press {
+  position: relative;
+  height: 70vh;
+  width: 20vw;
+  transform: rotateZ(15deg) translate(25vw);
+  border: 1px blue dashed;
+}
+
+.highlight-select {
+  animation: highlight-this 1.4s;
+} */
+
+@@keyframes highlight-this {
+
+  0% {
+    background-color: rgba(30, 30, 245, 0.0);
+  } 50% {
+    background-color: rgba(30, 30, 245, 0.6);
+  } 100% {
+    background-color: rgba(30, 30, 245, 0.0);
+  }
+
+
+}
+
 /* Scene Information */
 .scene-number {
   margin: 0;
