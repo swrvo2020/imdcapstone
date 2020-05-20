@@ -14,6 +14,23 @@ body {
   z-index: -1;
 }
 
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url('scenes/start.jpg')
+  url('scenes/scene-1A-B.jpg')
+  url('scenes/scene-1C-A.jpg')
+  url('scenes/scene-2A-A.jpg')
+  url('scenes/scene-2B-A.jpg')
+  url('scenes/scene-2E-C.jpg')
+  url('scenes/scene-2E-B.jpg')
+  url('scenes/scene-3B-B.jpg')
+  url('scenes/Uber-Elevate.jpg');
+}
+
 h1 {
   font-family: eurostile, sans-serif;
   font-weight: 700;
@@ -37,6 +54,15 @@ button {
   margin: 12px 0px;
 }
 
+button:focus {
+  outline: 0;
+}
+
+#next-button {
+  position: relative;
+  background-color: #FFFFFF;
+}
+
 #back-button {
   margin-right: 18px;
   color: rgba(255, 255, 255, 1);
@@ -50,6 +76,36 @@ button {
 
 .hidden {
   display: none;
+}
+
+/* animations */
+.fade-from-left {
+  animation: fade-in 1.4s;
+}
+
+@keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+.refresh {
+  animation: refresh-content 1.4s;
+}
+
+@keyframes refresh-content {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: .5;
+    }
+    100% {
+      opacity: 1;
+    }
 }
 
 /* Scene Information */
@@ -78,7 +134,7 @@ button {
   flex-direction: row;
   margin: auto;
   width: 80%;
-  border: purple 3px dashed;
+  /* border: purple 3px dashed; */
   z-index: 2;
 }
 
@@ -88,11 +144,23 @@ button {
   min-height: 640px;
   width: 90%;
   margin: 5% 2%;
-  border: 3px blue dashed;
+  padding: auto;
+  border-radius: 6px;
+  /* border: 3px blue dashed; */
 }
 
 .vr-toggle-item:hover {
   background-color: rgba(255, 0, 140, 0.5);
+}
+
+.vr-toggle-text {
+  margin: auto;
+  width: 50%;
+  height: 50%;
+  font-size: 3rem;
+  text-align: center;
+  justify-content: center;
+  border: 1px white dashed;
 }
 
 /* Navigation */
@@ -164,4 +232,15 @@ button {
   z-index: 0;
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.0));
   /* border: green 1px dashed; */
+}
+
+/* Screen images */
+.screen-container {
+  z-index: 1;
+}
+
+.screen-image {
+  width: 70vw;
+  position: absolute;
+  bottom: 0px;
 }

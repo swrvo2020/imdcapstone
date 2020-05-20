@@ -25,25 +25,36 @@
 
       <div id="place-scene" class="hidden">
         <div class="vr-toggle">
-          <div id="with-vr" class="vr-toggle-item">I have a VR Headset</div>
-          <div id="without-vr" class="vr-toggle-item">I don't have a VR Headset</div>
-        </div>
-      </div>
-
-      <div class="body-container">
-        <div class="item">
-          <h1 class="scene-number">Press button to start</h1>
-          <h2 class="scene-title">This is the scene title</h2>
-          <p class="scene-description">View the route to the station. While you are on your commute, you can check the information on the pilot information</p>
-          <div class="scene-change">
-            <button id="back-button" class="scene-change-button">Back</button>
-            <button id="next-button" class="scene-change-button">Next Scene</button>
+          <div id="with-vr" class="vr-toggle-item">
+            <h1 class="vr-toggle-text">I have a VR Headset</h1>
+          </div>
+          <div id="without-vr" class="vr-toggle-item">
+            <h1 class="vr-toggle-text">I don't have a VR Headset</h1>
           </div>
         </div>
       </div>
 
+
+      <div class="body-container">
+        <div class="screen-container">
+          <img class="screen-image"></img>
+        </div>
+
+        <div class="item">
+          <div class="scene-info">
+            <h1 class="scene-number">Press button to start</h1>
+            <h2 class="scene-title">Introducing SWRVO</h2>
+            <p class="scene-description">Welcome to the Urban Air Mobility web simulation. To get started, press the next button to continue.</p>
+          </div>
+          <div class="scene-change">
+            <button id="back-button" class="scene-change-button hidden">Back</button>
+            <button id="next-button" class="scene-change-button">Next Scene</button>
+          </div>
+        </div>
+      </div>
+      <div class="black-gradient"></div>
     </div>
-    <div class="black-gradient"></div>
-    <script src="action.js"></script>
+
+    <script src="action2.js"></script>
   </body>
 </html>
