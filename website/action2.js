@@ -259,6 +259,10 @@ $('#next-button').on('click', function() {
     $('.screen-container').removeClass('hidden');
   }
 
+  if(indexCount == 14) {
+    $('#next-button').text('Simulation');
+  }
+
   if(indexCount < sceneLength) {
 
     ChooseScene(indexCount);
@@ -280,6 +284,9 @@ $('#next-button').on('click', function() {
     indexCount++;
 
   } else {
+    $('.simulation-vid').removeClass('hidden');
+    $('.black-bg').removeClass('hidden');
+    $('#sim-vid').get(0).play();
     console.log('the case is outside of the boundaries!');
   };
 });
@@ -308,6 +315,12 @@ $('#back-button').on('click', function() {
     console.log('the case is outside of the boundaries!');
   };
 
+});
+
+// Alert when video ends
+$('#sim-vid').on('ended',function(){
+  
+    console.log('Video has ended!');
 });
 
 // unhide the scene toggle
