@@ -246,7 +246,7 @@ $('#next-button').on('click', function() {
     })
   })
 
-  if(indexCount == 0) {
+  if(indexCount >= 0) {
     $('.screen-container').addClass('fade-from-left');
     $('.scene-number').addClass('hidden');
   };
@@ -319,9 +319,50 @@ $('#back-button').on('click', function() {
 
 // Alert when video ends
 $('#sim-vid').on('ended',function(){
-  
     console.log('Video has ended!');
+    hideVideo();
 });
+
+function hideVideo() {
+  $('.simulation-vid').addClass('hidden');
+  $('.black-bg').addClass('hidden');
+}
+
+// Exiting out of video
+if(!$('simulation-vid').hasClass('hidden')) {
+  $('.black-bg').on('click', function (){
+    hideVideo();
+  })
+}
+
+// Restart simulation
+function restartSim() {
+  indexCount = 0;
+
+  ChooseScene(indexCount);
+  scenes.loadNewImg();
+  scenes.loadNewPhone();
+
+  $('.scene-info').animate({
+    'opacity': 0,
+  }, 300, 'linear', function() {
+
+     scenes.loadNewData();
+
+     $('.scene-info').animate({
+       'opacity': 1,
+     }, 300, 'linear');
+
+  });
+
+  indexCount++;
+}
+
+// restart button
+$('#restart-button').on('click', function() {
+  $('.scene-number').addClass('hidden');
+  restartSim();
+})
 
 // unhide the scene toggle
 function placeScene(toggle) {
